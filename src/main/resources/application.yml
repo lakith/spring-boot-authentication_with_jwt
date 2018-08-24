@@ -1,0 +1,27 @@
+spring:
+ main:
+   banner-mode: "off"
+ datasource:
+   url: jdbc:mysql://localhost:3306/sbjwt?useSSL=false
+   username: root
+   password:
+   dbcp: 
+     validation-query: SELECT 1
+     test-on-borrow: true
+   driver-class-name: org.gjt.mm.mysql.Driver
+
+ jpa:
+   show-sql: false
+   hibernate:
+     ddl-auto: update
+   properties:
+     hibernate:
+       cache:
+         use_second_level_cache: false
+         use_query_cache: false
+       generate_statistics: false
+   database-platform: org.hibernate.dialect.MySQL5Dialect
+server:
+  port: 5060
+  servlet:
+    context-path: /api/arimac
